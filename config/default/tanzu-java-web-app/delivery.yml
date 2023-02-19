@@ -8,7 +8,6 @@ metadata:
   labels:
     app.kubernetes.io/part-of: tanzu-java-web-app
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
-    apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/component: run
     carto.run/workload-name: tanzu-java-web-app
@@ -36,13 +35,12 @@ spec:
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
           appliveview-sample/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: tapwizardsecrtest.azurecr.io/test-source:latest@sha256:2c405db4cce91d208713457c711540f058e4f6e1f1b8e48e8ab61d74a06e9a5f
+        developer.apps.tanzu.vmware.com/image-source-digest: tapwizardsecrtest.azurecr.io/test-source:latest@sha256:b33660731cafe91a813d08bef438bdf2f2de48fa0518b9a1dd4e772d14748100
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: tanzu-java-web-app
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
-        apps.tanzu.vmware.com/has-tests: "true"
         apps.tanzu.vmware.com/workload-type: web
         carto.run/workload-name: tanzu-java-web-app
         conventions.carto.run/framework: spring-boot
@@ -60,7 +58,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: tapwizardsecrtest.azurecr.io/tap/supply-chain/tanzu-java-web-app-default@sha256:1262aaabf30e8c84f92bbe07f3b4b789380fdbdbd3cbe21963ef359ff042a3f1
+        image: tapwizardsecrtest.azurecr.io/tap/supply-chain/tanzu-java-web-app-default@sha256:39a79a45e241e78fa68c867e39b3b78bc2dd1e2b094130469fb808917b884c2b
         livenessProbe:
           httpGet:
             path: /livez
