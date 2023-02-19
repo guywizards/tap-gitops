@@ -36,7 +36,7 @@ spec:
           spring-boot-convention/app-live-view-connector-boot
           spring-boot-convention/app-live-view-appflavours-boot
           appliveview-sample/app-live-view-appflavour-check
-        developer.apps.tanzu.vmware.com/image-source-digest: tapwizardsecrtest.azurecr.io/test-source:latest@sha256:bbe0435e4654dec442f59d67326bd6dc0bbc14682437fcbe1f4b33e9eefa80c4
+        developer.apps.tanzu.vmware.com/image-source-digest: tapwizardsecrtest.azurecr.io/test-source:latest@sha256:6728b74d326a217e3d3a7b5ca10591839190ec1d59d9e9253fb384a94feb84bb
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -60,7 +60,7 @@ spec:
           value: "9005"
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: tapwizardsecrtest.azurecr.io/tap/supply-chain/tanzu-java-web-app-default@sha256:7399653316d3fec124c478b8eb51bb6b61a2d6d8e1be71f2b15006f9afc7e58b
+        image: tapwizardsecrtest.azurecr.io/tap/supply-chain/tanzu-java-web-app-default@sha256:1f3fbadfe9e691dd1feb3bc87b14daed697a77880d362650af9ca9708fe4660a
         livenessProbe:
           httpGet:
             path: /livez
